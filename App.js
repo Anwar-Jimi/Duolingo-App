@@ -1,20 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import styles from './App.styles';
+
 
 export default function App() {
+  const status = "ok"
   return (
-    <View style={styles.container}>
-      <Text></Text>
-      <StatusBar style="auto" />
+    <View style={styles.root}>
+
+      <Text style={styles.title}>Which of these is the "glass"</Text>
+
+      <View style={styles.optionsContainer}>
+
+      <View style={styles.optionContainer}>
+        <Image 
+        source={{ uri: "https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png"}}
+        resizeMode='contain'
+        style={styles.optionImage}/>
+        <Text style={styles.optionText}>glass</Text>
+      </View>
+      
+      </View>
+
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
