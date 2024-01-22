@@ -3,10 +3,16 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import React, { useState } from 'react';
 import styles from './App.styles';
 import ImageOption from './src/components/ImageOption/ImageOption';
-import question from './assets/data/oneQuestionWithOption'
+import question from './assets/data/oneQuestionWithOption';
+import Button from './src/components/Button';
 
 export default function App() {
   const [selected, setSelected] = useState(null);
+
+  const onButtonPress = () => {
+    console.warn("Pressed");
+  };
+
   return (
     <View style={styles.root}>
 
@@ -22,6 +28,7 @@ export default function App() {
           onPress={() => setSelected(option)}/>
         ))}
       </View>
+      <Button text="Continnue" onPress={onButtonPress} disabled={!selected} />
 
     </View>
   );

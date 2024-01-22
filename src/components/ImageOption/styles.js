@@ -8,8 +8,8 @@ const styles = StyleSheet.create({
     borderColor: "lightgrey",
     borderRadius: 3,
 
-    width: "46%",
-    height: "46%",
+    width: "48%",
+    height: "48%",
 
     padding: 10,
 
