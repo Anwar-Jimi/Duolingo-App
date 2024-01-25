@@ -1,11 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Alert } from 'react-native';
 import React, { useState, useEffect } from 'react';
+
 import styles from './App.styles';
 import ImageOption from './src/components/ImageOption/ImageOption';
-import questions from './assets/data/imageMulatipleChoiceQuestions';
 import Button from './src/components/Button';
 import ImageMulatipleChoiceQuestions from './src/components/imageMulatipleChoiceQuestions';
+import OpenEndedQuestions from './src/components/OpenEndedQuestions/OpenEndedQuestions'
+//import questions from './assets/data/imageMulatipleChoiceQuestions';
+import questions from './assets/data/openEndedQuestions'
 
 export default function App() {
 
@@ -30,10 +33,16 @@ export default function App() {
 
   return (
     <View style={styles.root}>
-      <ImageMulatipleChoiceQuestions
+      {/*<ImageMulatipleChoiceQuestions
        question={currentQuestion}
        onCorrect={onCorrect}
-       onWrong={onWrong}/>
+  onWrong={onWrong}/> */}
+      <OpenEndedQuestions
+        question={currentQuestion}
+        onCorrect={onCorrect}
+        onWrong={onWrong} 
+      />
+      
     </View>
   );
 }
