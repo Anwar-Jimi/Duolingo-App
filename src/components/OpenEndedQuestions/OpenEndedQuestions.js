@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, Image, TextInput } from "react-native";
 import styles from "./styles";
 import Button from "../Button";
 import mascot from "../../../assets/images/mascot.png";
 
  const OpenEndedQuestions = ({question, onCorrect, onWrong}) => {
+
+    const [input, setInput] = useState("");
+
+
     const onButtonPress = () => {
-        
+        if(question.answer === input){
+            onCorrect();
+        } else {
+            onWrong();
+        }
     };
     
     return(
@@ -21,10 +29,14 @@ import mascot from "../../../assets/images/mascot.png";
         </View>
 
         <TextInput 
+              value={input}
+              onChangeText={setInput}
               placeholder="Type in english"
               style={styles.textUnput}
+              textAlignVertical="top"
+              multiline
             />
-        <Button text="Continnue" onPress={onButtonPress} disabled={true} />
+        <Button text="Continnue" onPress={onButtonPress} disabled={false} />
         </>
     )
  }
