@@ -36,7 +36,7 @@ import mascot from "../../../assets/images/mascot.png";
               textAlignVertical="top"
               multiline
             />
-        <Button text="Continnue" onPress={onButtonPress} disabled={false} />
+        <Button text="Continnue" onPress={onButtonPress} disabled={!input} />
         </>
     )
  }

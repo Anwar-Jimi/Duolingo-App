@@ -1,1 +1,1 @@
-export {default} from './OpenEndedQuestions'
+export {default} from "./openEndedQuestions";
